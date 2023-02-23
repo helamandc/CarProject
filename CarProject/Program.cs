@@ -10,7 +10,7 @@ namespace CarProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("The car needs fuel to start driving. Please enter fuel(litres): ");
+            Console.Write("The car needs fuel to start driving. Please enter fuel(litres): ");
             int gas = int.Parse(Console.ReadLine());
 
             Car myCar = new Car();
@@ -18,21 +18,28 @@ namespace CarProject
             myCar.Refuel(gas);
             myCar.Drive();
 
+            Console.ReadLine();
         }
     }
 
     public class Car
     {
+        public int carGas { get; set; }
         public void Drive()
         {
-            if (Refuel == true)
-                Console.WriteLine("Driving");
+            if (carGas > 0)
+                Console.WriteLine("\nDriving");
+            else
+                Console.WriteLine("\nNot Driving");
         }
 
         public bool Refuel(int amtGas)
         {
-            if(amtGas > 0)
-            return true;
+            carGas = amtGas;            
+            if(carGas > 0)
+                return true;
+            else
+                return false;
         }
     }
 
