@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarProject
 {
+    //https://www.exercisescsharp.com/oop/interfaces
     internal class Program
     {
         static void Main(string[] args)
